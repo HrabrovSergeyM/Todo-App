@@ -18,6 +18,7 @@ struct ContentView: View {
     private var todos: FetchedResults<TodoEntity>
     
     @State private var showingAddTodoView: Bool = false
+    @State private var animatingButton: Bool = false
     
     // MARK: - Body
     
@@ -42,10 +43,9 @@ struct ContentView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             self.showingAddTodoView.toggle()
-                            //                        addItem()
                         } label: {
                             Image(systemName: "plus")
-                        }
+                        } // Add Button
                         .sheet(isPresented: $showingAddTodoView) {
                             AddTodoView().environment(\.managedObjectContext, self.viewContext)
                         }
@@ -54,7 +54,7 @@ struct ContentView: View {
                     ToolbarItem(placement: .navigationBarLeading) {
                         EditButton()
                     }
-            }
+                }
                 
                 // MARK: - No todos
                 if todos.isEmpty {
@@ -62,6 +62,46 @@ struct ContentView: View {
                 }
                 
             } // ZStack
+            .sheet(isPresented: $showingAddTodoView) {
+                AddTodoView().environment(\.managedObjectContext, self.viewContext)
+            }
+            .overlay(
+                ZStack {
+                    Group {
+                        Circle()
+                            .fill(.blue)
+                            .opacity(self.animatingButton ? 0.2 : 0)
+                            .scaleEffect(self.animatingButton ? 1 : 0)
+                            .frame(width: 68, height: 68, alignment: .center)
+                        Circle()
+                            .fill(.blue)
+                            .opacity(self.animatingButton ? 0.15 : 0)
+                            .scaleEffect(self.animatingButton ? 1 : 0)
+                            .frame(width: 88, height: 88, alignment: .center)
+                    } // Group
+                    .animation(.easeOut(duration: 2).repeatForever(autoreverses: true), value: animatingButton)
+                    
+                    Button(action: {
+                        self.showingAddTodoView.toggle()
+                    }, label: {
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .background(Circle().fill(Color("ColorBase")))
+                            .frame(width: 48, height: 48, alignment: .center)
+                    } // Button
+                    )
+                    .onAppear {
+                        withAnimation {
+                            self.animatingButton.toggle()
+                        }
+                    }
+                } // ZStack
+                    .padding(.bottom, 15)
+                    .padding(.trailing, 15)
+                , alignment: .bottomTrailing
+            )
+            
         } // NavigationView
     }
     
