@@ -18,6 +18,15 @@
 		E9AA7EE62A63D1B70075CF18 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA7EE52A63D1B70075CF18 /* SettingsView.swift */; };
 		E9AA7EE82A63EB280075CF18 /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA7EE72A63EB280075CF18 /* FormRowStaticView.swift */; };
 		E9AA7EEA2A63ED000075CF18 /* FormRowLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA7EE92A63ED000075CF18 /* FormRowLinkView.swift */; };
+		E9AA7EF52A63F3A90075CF18 /* Blue Light.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AA7EEC2A63F3A80075CF18 /* Blue Light.png */; };
+		E9AA7EF62A63F3A90075CF18 /* Pink.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AA7EED2A63F3A80075CF18 /* Pink.png */; };
+		E9AA7EF72A63F3A90075CF18 /* Green.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AA7EEE2A63F3A80075CF18 /* Green.png */; };
+		E9AA7EF82A63F3A90075CF18 /* Green Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AA7EEF2A63F3A90075CF18 /* Green Dark.png */; };
+		E9AA7EF92A63F3A90075CF18 /* Blue Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AA7EF02A63F3A90075CF18 /* Blue Dark.png */; };
+		E9AA7EFA2A63F3A90075CF18 /* Green Light.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AA7EF12A63F3A90075CF18 /* Green Light.png */; };
+		E9AA7EFB2A63F3A90075CF18 /* Pink Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AA7EF22A63F3A90075CF18 /* Pink Dark.png */; };
+		E9AA7EFC2A63F3A90075CF18 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AA7EF32A63F3A90075CF18 /* Blue.png */; };
+		E9AA7EFD2A63F3A90075CF18 /* Pink Light.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AA7EF42A63F3A90075CF18 /* Pink Light.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +43,15 @@
 		E9AA7EE52A63D1B70075CF18 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E9AA7EE72A63EB280075CF18 /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
 		E9AA7EE92A63ED000075CF18 /* FormRowLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowLinkView.swift; sourceTree = "<group>"; };
+		E9AA7EEC2A63F3A80075CF18 /* Blue Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue Light.png"; sourceTree = "<group>"; };
+		E9AA7EED2A63F3A80075CF18 /* Pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pink.png; sourceTree = "<group>"; };
+		E9AA7EEE2A63F3A80075CF18 /* Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Green.png; sourceTree = "<group>"; };
+		E9AA7EEF2A63F3A90075CF18 /* Green Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Dark.png"; sourceTree = "<group>"; };
+		E9AA7EF02A63F3A90075CF18 /* Blue Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue Dark.png"; sourceTree = "<group>"; };
+		E9AA7EF12A63F3A90075CF18 /* Green Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Green Light.png"; sourceTree = "<group>"; };
+		E9AA7EF22A63F3A90075CF18 /* Pink Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pink Dark.png"; sourceTree = "<group>"; };
+		E9AA7EF32A63F3A90075CF18 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
+		E9AA7EF42A63F3A90075CF18 /* Pink Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pink Light.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +84,7 @@
 		E999DB5D2A634720004E8B71 /* Todo App */ = {
 			isa = PBXGroup;
 			children = (
+				E9AA7EEB2A63F3960075CF18 /* Icons */,
 				E9AA7EE22A63BCE90075CF18 /* Todo-App-Info.plist */,
 				E999DB5E2A634720004E8B71 /* Todo_AppApp.swift */,
 				E999DB712A63473A004E8B71 /* View */,
@@ -96,6 +115,22 @@
 				E9AA7EE92A63ED000075CF18 /* FormRowLinkView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E9AA7EEB2A63F3960075CF18 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E9AA7EF02A63F3A90075CF18 /* Blue Dark.png */,
+				E9AA7EEC2A63F3A80075CF18 /* Blue Light.png */,
+				E9AA7EF32A63F3A90075CF18 /* Blue.png */,
+				E9AA7EEF2A63F3A90075CF18 /* Green Dark.png */,
+				E9AA7EF12A63F3A90075CF18 /* Green Light.png */,
+				E9AA7EEE2A63F3A80075CF18 /* Green.png */,
+				E9AA7EF22A63F3A90075CF18 /* Pink Dark.png */,
+				E9AA7EF42A63F3A90075CF18 /* Pink Light.png */,
+				E9AA7EED2A63F3A80075CF18 /* Pink.png */,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,8 +191,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9AA7EF82A63F3A90075CF18 /* Green Dark.png in Resources */,
+				E9AA7EF52A63F3A90075CF18 /* Blue Light.png in Resources */,
+				E9AA7EF62A63F3A90075CF18 /* Pink.png in Resources */,
+				E9AA7EFB2A63F3A90075CF18 /* Pink Dark.png in Resources */,
+				E9AA7EFD2A63F3A90075CF18 /* Pink Light.png in Resources */,
+				E9AA7EFA2A63F3A90075CF18 /* Green Light.png in Resources */,
 				E999DB662A634723004E8B71 /* Preview Assets.xcassets in Resources */,
 				E999DB632A634723004E8B71 /* Assets.xcassets in Resources */,
+				E9AA7EFC2A63F3A90075CF18 /* Blue.png in Resources */,
+				E9AA7EF92A63F3A90075CF18 /* Blue Dark.png in Resources */,
+				E9AA7EF72A63F3A90075CF18 /* Green.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

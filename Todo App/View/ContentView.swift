@@ -21,6 +21,8 @@ struct ContentView: View {
     @State private var animatingButton: Bool = false
     @State private var showingSettingsView: Bool = false
     
+    @EnvironmentObject var iconSettings: IconNames
+    
     // MARK: - Body
     
     var body: some View {
@@ -49,7 +51,7 @@ struct ContentView: View {
                                 .imageScale(.large)
                         } // Add Button
                         .sheet(isPresented: $showingSettingsView) {
-                            SettingsView()
+                            SettingsView().environmentObject(self.iconSettings)
                         }
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
