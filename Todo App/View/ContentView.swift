@@ -19,6 +19,7 @@ struct ContentView: View {
     
     @State private var showingAddTodoView: Bool = false
     @State private var animatingButton: Bool = false
+    @State private var showingSettingsView: Bool = false
     
     // MARK: - Body
     
@@ -42,20 +43,21 @@ struct ContentView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            self.showingAddTodoView.toggle()
+                            self.showingSettingsView.toggle()
                         } label: {
-                            Image(systemName: "plus")
+                            Image(systemName: "paintbrush")
+                                .imageScale(.large)
                         } // Add Button
-                        .sheet(isPresented: $showingAddTodoView) {
-                            AddTodoView().environment(\.managedObjectContext, self.viewContext)
+                        .sheet(isPresented: $showingSettingsView) {
+                            SettingsView()
                         }
-                        
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
-                        EditButton()
+                        if !todos.isEmpty {
+                            EditButton()
+                        }
                     }
                 }
-                
                 // MARK: - No todos
                 if todos.isEmpty {
                     EmptyListView()
@@ -101,7 +103,6 @@ struct ContentView: View {
                     .padding(.trailing, 15)
                 , alignment: .bottomTrailing
             )
-            
         } // NavigationView
     }
     

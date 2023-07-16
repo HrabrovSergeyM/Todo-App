@@ -15,6 +15,9 @@
 		E999DB6B2A634723004E8B71 /* Todo_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E999DB692A634723004E8B71 /* Todo_App.xcdatamodeld */; };
 		E999DB732A63475C004E8B71 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E999DB722A63475C004E8B71 /* AddTodoView.swift */; };
 		E9AA7EE42A63BEF10075CF18 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA7EE32A63BEF10075CF18 /* EmptyListView.swift */; };
+		E9AA7EE62A63D1B70075CF18 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA7EE52A63D1B70075CF18 /* SettingsView.swift */; };
+		E9AA7EE82A63EB280075CF18 /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA7EE72A63EB280075CF18 /* FormRowStaticView.swift */; };
+		E9AA7EEA2A63ED000075CF18 /* FormRowLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA7EE92A63ED000075CF18 /* FormRowLinkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		E999DB722A63475C004E8B71 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 		E9AA7EE22A63BCE90075CF18 /* Todo-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Todo-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E9AA7EE32A63BEF10075CF18 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		E9AA7EE52A63D1B70075CF18 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E9AA7EE72A63EB280075CF18 /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
+		E9AA7EE92A63ED000075CF18 /* FormRowLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowLinkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,9 @@
 				E999DB602A634720004E8B71 /* ContentView.swift */,
 				E999DB722A63475C004E8B71 /* AddTodoView.swift */,
 				E9AA7EE32A63BEF10075CF18 /* EmptyListView.swift */,
+				E9AA7EE52A63D1B70075CF18 /* SettingsView.swift */,
+				E9AA7EE72A63EB280075CF18 /* FormRowStaticView.swift */,
+				E9AA7EE92A63ED000075CF18 /* FormRowLinkView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9AA7EE62A63D1B70075CF18 /* SettingsView.swift in Sources */,
+				E9AA7EE82A63EB280075CF18 /* FormRowStaticView.swift in Sources */,
+				E9AA7EEA2A63ED000075CF18 /* FormRowLinkView.swift in Sources */,
 				E999DB682A634723004E8B71 /* Persistence.swift in Sources */,
 				E999DB612A634720004E8B71 /* ContentView.swift in Sources */,
 				E9AA7EE42A63BEF10075CF18 /* EmptyListView.swift in Sources */,

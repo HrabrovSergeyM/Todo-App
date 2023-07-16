@@ -80,7 +80,7 @@ struct AddTodoView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button {
-                    dismiss()
+                    self.dismiss()
                 } label: {
                     Image(systemName: "xmark")
                 }
