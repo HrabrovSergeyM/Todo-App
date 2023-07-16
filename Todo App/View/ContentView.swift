@@ -36,7 +36,7 @@ struct ContentView: View {
                     Image(systemName: "plus")
                 } // Add Button
                 .sheet(isPresented: $showingAddTodoView) {
-                    AddTodoView()
+                    AddTodoView().environment(\.managedObjectContext, self.viewContext)
                 }
             }
         } // NavigationView
