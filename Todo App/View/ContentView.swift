@@ -23,37 +23,45 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(self.todos, id: \.self) { todo in
-                    HStack {
-                        Text(todo.name ?? "Unknown")
-                        
-                        Spacer()
-                        
-                        Text(todo.priority ?? "Unknown")
-                    } // HStack
-                }
-                .onDelete(perform: deleteTodo)
-            } // List
-            .navigationTitle("Todo")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        self.showingAddTodoView.toggle()
-                        //                        addItem()
-                    } label: {
-                        Image(systemName: "plus")
+            ZStack {
+                List {
+                    ForEach(self.todos, id: \.self) { todo in
+                        HStack {
+                            Text(todo.name ?? "Unknown")
+                            
+                            Spacer()
+                            
+                            Text(todo.priority ?? "Unknown")
+                        } // HStack
                     }
-                    .sheet(isPresented: $showingAddTodoView) {
-                        AddTodoView().environment(\.managedObjectContext, self.viewContext)
+                    .onDelete(perform: deleteTodo)
+                } // List
+                .navigationTitle("Todo")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            self.showingAddTodoView.toggle()
+                            //                        addItem()
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                        .sheet(isPresented: $showingAddTodoView) {
+                            AddTodoView().environment(\.managedObjectContext, self.viewContext)
+                        }
+                        
                     }
-                    
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    EditButton()
-                }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        EditButton()
+                    }
             }
+                
+                // MARK: - No todos
+                if todos.isEmpty {
+                    EmptyListView()
+                }
+                
+            } // ZStack
         } // NavigationView
     }
     

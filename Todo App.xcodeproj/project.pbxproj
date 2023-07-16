@@ -14,6 +14,7 @@
 		E999DB682A634723004E8B71 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E999DB672A634723004E8B71 /* Persistence.swift */; };
 		E999DB6B2A634723004E8B71 /* Todo_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E999DB692A634723004E8B71 /* Todo_App.xcdatamodeld */; };
 		E999DB732A63475C004E8B71 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E999DB722A63475C004E8B71 /* AddTodoView.swift */; };
+		E9AA7EE42A63BEF10075CF18 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA7EE32A63BEF10075CF18 /* EmptyListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,8 @@
 		E999DB672A634723004E8B71 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E999DB6A2A634723004E8B71 /* Todo_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todo_App.xcdatamodel; sourceTree = "<group>"; };
 		E999DB722A63475C004E8B71 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
+		E9AA7EE22A63BCE90075CF18 /* Todo-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Todo-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E9AA7EE32A63BEF10075CF18 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 		E999DB5D2A634720004E8B71 /* Todo App */ = {
 			isa = PBXGroup;
 			children = (
+				E9AA7EE22A63BCE90075CF18 /* Todo-App-Info.plist */,
 				E999DB5E2A634720004E8B71 /* Todo_AppApp.swift */,
 				E999DB712A63473A004E8B71 /* View */,
 				E999DB622A634723004E8B71 /* Assets.xcassets */,
@@ -80,6 +84,7 @@
 			children = (
 				E999DB602A634720004E8B71 /* ContentView.swift */,
 				E999DB722A63475C004E8B71 /* AddTodoView.swift */,
+				E9AA7EE32A63BEF10075CF18 /* EmptyListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			files = (
 				E999DB682A634723004E8B71 /* Persistence.swift in Sources */,
 				E999DB612A634720004E8B71 /* ContentView.swift in Sources */,
+				E9AA7EE42A63BEF10075CF18 /* EmptyListView.swift in Sources */,
 				E999DB5F2A634720004E8B71 /* Todo_AppApp.swift in Sources */,
 				E999DB6B2A634723004E8B71 /* Todo_App.xcdatamodeld in Sources */,
 				E999DB732A63475C004E8B71 /* AddTodoView.swift in Sources */,
@@ -290,9 +296,9 @@
 				DEVELOPMENT_TEAM = 3V7H9MP56S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Todo-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -319,9 +325,9 @@
 				DEVELOPMENT_TEAM = 3V7H9MP56S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Todo-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
