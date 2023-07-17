@@ -12,7 +12,11 @@ struct SettingsView: View {
     
     @Environment(\.isPresented) var isPresented
     @Environment(\.dismiss) var dismiss
+    
     @EnvironmentObject var iconSettings: IconNames
+    
+    let themes: [Theme] = themeData
+    @ObservedObject var theme = ThemeSettings()
     
     // MARK: - Body
     var body: some View {
@@ -32,7 +36,7 @@ struct SettingsView: View {
                             }
                             .frame(width: 44, height: 44)
                             
-                            Text("App Icons".uppercased())
+                            Text("App Icons")
                                 .fontWeight(.bold)
                                 .foregroundColor(Color.primary)
                         } // Label
@@ -51,7 +55,7 @@ struct SettingsView: View {
                                     Text(self.iconSettings.iconNames[index] ?? "Blue")
                                         .frame(alignment: .leading)
                                     
-
+                                    
                                 } // HStack
                                 .padding(3)
                             } // ForEach
@@ -64,21 +68,49 @@ struct SettingsView: View {
                                         print(error.localizedDescription)
                                     } else {
                                         print("Success! You have changed the app icon.")
-                                      
+                                        
                                     }
                                 }
                             }
                         }
                         .pickerStyle(.navigationLink)
-                    } // Section 0
+                    } // Section Icons
                     .padding(.vertical, 3)
+                    
+                    Section(header:
+                                HStack {
+                        Text("Choose the app theme")
+                        Image(systemName: "circle.fill")
+                            .resizable()
+                            .frame(width: 10, height: 10)
+                            .foregroundColor(themes[self.theme.themeSettings].themeColor)
+                    } // HStack
+                    ) {
+                        List {
+                            ForEach(themes, id: \.id) { theme in
+                                Button {
+                                    self.theme.themeSettings = theme.id
+                                    UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                                } label: {
+                                    HStack {
+                                        Text(theme.themeName)
+                                        Spacer()
+                                        Image(systemName: "circle.fill")
+                                            .foregroundColor(theme.themeColor)
+                                    } // HStack
+                                } // Button
+                                .accentColor(.primary)
+                            } // ForEach
+                        } // List
+                    } // Section Theme
+                    .padding(3)
                     
                     Section {
                         FormRowLinkView(icon: "globe", color: .black, text: "Github", link: "https://github.com/HrabrovSergeyM")
                         FormRowLinkView(icon: "camera", color: .pink, text: "Instagram", link: "https://instagram.com/hrabrov_s")
                     } header: {
                         Text("Follow me on social media")
-                    } // Section 1
+                    } // Section Links
                     .padding(.vertical, 3)
                     
                     Section {
@@ -88,7 +120,7 @@ struct SettingsView: View {
                         FormRowStaticView(icon: "flag", firstText: "Version", secondText: "1.0.0")
                     } header: {
                         Text("About the application")
-                    } // Section 2
+                    } // Section About
                     .padding(.vertical, 3)
                     
                 } // Form
@@ -103,6 +135,7 @@ struct SettingsView: View {
                     self.dismiss()
                 } label: {
                     Image(systemName: "xmark")
+                        .accentColor(themes[self.theme.themeSettings].themeColor)
                 } // Button
             } // toolbar
         } // NavigationView

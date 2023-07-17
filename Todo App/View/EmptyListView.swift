@@ -15,6 +15,9 @@ struct EmptyListView: View {
     @State private var image: String = ""
     @State private var tip: String = ""
     
+    @ObservedObject var theme = ThemeSettings()
+    var themes: [Theme] = themeData
+    
     let images: [String] = [
         "illustration-no1",
         "illustration-no2",
@@ -43,6 +46,7 @@ struct EmptyListView: View {
                     .scaledToFit()
                     .frame(minWidth: 256, idealWidth: 280, maxWidth: 360, minHeight: 256, idealHeight: 280, maxHeight: 360, alignment: .center)
                     .layoutPriority(1)
+                   
                 
                 Text(tip)
                     .layoutPriority(0.5)

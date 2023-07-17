@@ -23,6 +23,9 @@ struct ContentView: View {
     
     @EnvironmentObject var iconSettings: IconNames
     
+    @ObservedObject var theme = ThemeSettings()
+    var themes: [Theme] = themeData
+    
     // MARK: - Body
     
     var body: some View {
@@ -49,7 +52,8 @@ struct ContentView: View {
                         } label: {
                             Image(systemName: "paintbrush")
                                 .imageScale(.large)
-                        } // Add Button
+                        } // Settings Button
+                        .accentColor(themes[self.theme.themeSettings].themeColor)
                         .sheet(isPresented: $showingSettingsView) {
                             SettingsView().environmentObject(self.iconSettings)
                         }
@@ -57,6 +61,7 @@ struct ContentView: View {
                     ToolbarItem(placement: .navigationBarLeading) {
                         if !todos.isEmpty {
                             EditButton()
+                                .accentColor(themes[self.theme.themeSettings].themeColor)
                         }
                     }
                 }
@@ -73,12 +78,12 @@ struct ContentView: View {
                 ZStack {
                     Group {
                         Circle()
-                            .fill(.blue)
+                            .fill(themes[self.theme.themeSettings].themeColor)
                             .opacity(self.animatingButton ? 0.2 : 0)
                             .scaleEffect(self.animatingButton ? 1 : 0)
                             .frame(width: 68, height: 68, alignment: .center)
                         Circle()
-                            .fill(.blue)
+                            .fill(themes[self.theme.themeSettings].themeColor)
                             .opacity(self.animatingButton ? 0.15 : 0)
                             .scaleEffect(self.animatingButton ? 1 : 0)
                             .frame(width: 88, height: 88, alignment: .center)
@@ -93,8 +98,10 @@ struct ContentView: View {
                             .scaledToFit()
                             .background(Circle().fill(Color("ColorBase")))
                             .frame(width: 48, height: 48, alignment: .center)
+                        
                     } // Button
                     )
+                    .accentColor(themes[self.theme.themeSettings].themeColor)
                     .onAppear {
                         withAnimation {
                             self.animatingButton.toggle()

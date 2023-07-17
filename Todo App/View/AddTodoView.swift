@@ -23,6 +23,9 @@ struct AddTodoView: View {
     @State private var errorTitle: String = ""
     @State private var errorMessage: String = ""
     
+    @ObservedObject var theme = ThemeSettings()
+    var themes: [Theme] = themeData
+    
     // MARK: - Body
     var body: some View {
         NavigationView {
@@ -64,7 +67,7 @@ struct AddTodoView: View {
                             .font(.system(size: 24, weight: .bold, design: .default))
                             .padding()
                             .frame(minWidth: 0, maxWidth: .infinity)
-                            .background(.blue)
+                            .background(themes[self.theme.themeSettings].themeColor)
                             .cornerRadius(9)
                             .foregroundColor(.white)
                     } // Button
@@ -84,8 +87,10 @@ struct AddTodoView: View {
                 } label: {
                     Image(systemName: "xmark")
                 }
+                
 
             }
+            .accentColor(themes[self.theme.themeSettings].themeColor)
             .alert(isPresented: $errorShowing) {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("Ok")))
             }
