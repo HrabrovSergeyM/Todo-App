@@ -15,7 +15,7 @@ struct EmptyListView: View {
     @State private var image: String = ""
     @State private var tip: String = ""
     
-    @ObservedObject var theme = ThemeSettings()
+    @ObservedObject var theme = ThemeSettings.shared
     var themes: [Theme] = themeData
     
     let images: [String] = [
@@ -42,15 +42,18 @@ struct EmptyListView: View {
             VStack(alignment: .center, spacing: 20 ) {
                 
                 Image(image)
+                    .renderingMode(.template)
                     .resizable()
                     .scaledToFit()
                     .frame(minWidth: 256, idealWidth: 280, maxWidth: 360, minHeight: 256, idealHeight: 280, maxHeight: 360, alignment: .center)
                     .layoutPriority(1)
+                    .foregroundColor(themes[self.theme.themeSettings].themeColor)
                    
-                
                 Text(tip)
                     .layoutPriority(0.5)
                     .font(.system(.headline, design: .rounded))
+                    .foregroundColor(themes[self.theme.themeSettings].themeColor)
+                
             } // VStack
             .padding(.horizontal)
             .opacity(isAnimated ? 1 : 0)

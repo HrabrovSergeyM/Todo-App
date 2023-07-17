@@ -16,7 +16,8 @@ struct SettingsView: View {
     @EnvironmentObject var iconSettings: IconNames
     
     let themes: [Theme] = themeData
-    @ObservedObject var theme = ThemeSettings()
+    @ObservedObject var theme = ThemeSettings.shared
+    @State private var isThemeChanged: Bool = false
     
     // MARK: - Body
     var body: some View {
@@ -91,6 +92,7 @@ struct SettingsView: View {
                                 Button {
                                     self.theme.themeSettings = theme.id
                                     UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                                    self.isThemeChanged.toggle()
                                 } label: {
                                     HStack {
                                         Text(theme.themeName)
@@ -104,6 +106,13 @@ struct SettingsView: View {
                         } // List
                     } // Section Theme
                     .padding(3)
+                    .alert(isPresented: $isThemeChanged) {
+                        Alert(
+                            title: Text("Succes!"),
+                            message: Text("App has been changed to the \(themes[self.theme.themeSettings].themeName)."),
+                            dismissButton: .default(Text("Ok"))
+                        )
+                    }
                     
                     Section {
                         FormRowLinkView(icon: "globe", color: .black, text: "Github", link: "https://github.com/HrabrovSergeyM")

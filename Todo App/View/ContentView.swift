@@ -23,7 +23,7 @@ struct ContentView: View {
     
     @EnvironmentObject var iconSettings: IconNames
     
-    @ObservedObject var theme = ThemeSettings()
+    @ObservedObject var theme = ThemeSettings.shared
     var themes: [Theme] = themeData
     
     // MARK: - Body
@@ -34,12 +34,24 @@ struct ContentView: View {
                 List {
                     ForEach(self.todos, id: \.self) { todo in
                         HStack {
+                            Circle()
+                                .frame(width: 12, height: 12, alignment: .center)
+                                .foregroundColor(self.colorize(priority: todo.priority ?? "Normal"))
                             Text(todo.name ?? "Unknown")
+                                .fontWeight(.semibold)
                             
                             Spacer()
                             
                             Text(todo.priority ?? "Unknown")
+                                .font(.footnote)
+                                .foregroundColor(Color(UIColor.systemGray))
+                                .padding(3)
+                                .frame(minWidth: 62)
+                                .overlay(
+                                    Capsule().stroke(Color(UIColor.systemGray2), lineWidth: 0.75)
+                                )
                         } // HStack
+                        .padding(.vertical, 10)
                     }
                     .onDelete(perform: deleteTodo)
                 } // List
@@ -127,6 +139,19 @@ struct ContentView: View {
             } catch {
                 print(error)
             }
+        }
+    }
+    
+    private func colorize(priority: String) -> Color {
+        switch priority {
+        case "High":
+            return .pink
+        case "Normal":
+            return .green
+        case "Low":
+            return .blue
+        default:
+            return .gray
         }
     }
     
