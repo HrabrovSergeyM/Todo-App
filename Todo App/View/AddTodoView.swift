@@ -95,6 +95,7 @@ struct AddTodoView: View {
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("Ok")))
             }
         } // NavigationView
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 // MARK: - Preview

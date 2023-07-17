@@ -125,6 +125,7 @@ struct ContentView: View {
                 , alignment: .bottomTrailing
             )
         } // NavigationView
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     // MARK: - Function

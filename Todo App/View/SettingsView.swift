@@ -148,6 +148,7 @@ struct SettingsView: View {
                 } // Button
             } // toolbar
         } // NavigationView
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
